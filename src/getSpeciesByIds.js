@@ -5,7 +5,7 @@ const getSpeciesByIds = (...ids) => {
   const arraySpecies = [];
   data.species.forEach((item) => {
     if (ids.includes(item.id)) {
-      arraySpecies.push(item)
+      arraySpecies.push(item);
     }
   });
   return arraySpecies;
