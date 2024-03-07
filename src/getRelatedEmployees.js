@@ -2,9 +2,9 @@ const data = require('../data/zoo_data');
 
 const isManager = (id) => {
   // seu código aqui
-  const isManager = data.employees
+  const isManagerBoolean = data.employees
     .some(({ managers }) => managers.includes(id));
-  return isManager;
+  return isManagerBoolean;
 };
 
 const getRelatedEmployees = (managerId) => {
