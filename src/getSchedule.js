@@ -31,7 +31,7 @@ const getSchedule = (scheduleTarget) => {
   const animals = data.species.map(({ name }) => name);
   const days = Object.keys(data.hours);
   let result;
-  if (!scheduleTarget || !days.concat(animals).includes(scheduleTarget)) {
+  if (!scheduleTarget || ![...days, ...animals].includes(scheduleTarget)) {
     result = getScheduleAllDays(days);
   } else if (days.includes(scheduleTarget)) {
     result = {};
