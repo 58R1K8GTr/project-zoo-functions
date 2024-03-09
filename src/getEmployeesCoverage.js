@@ -21,14 +21,14 @@ function getAReport(name, id) {
   };
 }
 
-const getEmployeesCoverage = (personIdentifier) => {
+const getEmployeesCoverage = (personIdentifier = {}) => {
   // seu código aqui
   let result;
-  if (!personIdentifier) {
+  const { name, id } = personIdentifier;
+  if (!name && !id) {
     result = data.employees
       .map(({ id: idEmployee }) => getAReport(undefined, idEmployee));
   } else {
-    const { name = undefined, id = undefined } = personIdentifier;
     result = getAReport(name, id);
   }
   return result;
